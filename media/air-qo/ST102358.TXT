@@ -1,0 +1,52 @@
+
+BAM 1022 Settings Report
+2024-05-06 10:24:07
+
+      Firmware, 81650, R1.0.7
+          CPLD, 81699, R1.0.1
+ Serial Number, Y16134
+      Location, 1
+     Baud Rate, 9600
+Ethernet FlowControl, NONE
+  Data Average, 1 HR
+RealTime Period, 60
+   Tape Period, 1 HR
+ Tape Pressure, 250
+             K, 1.062
+    Background, 0.0012
+           Usw, 0.285
+    Audit Span, 0.822
+    Conc Units, ug/m3
+      USB Days, 999
+     USB Files, ALL
+Analog Range 1, 0-5.0 V
+Analog Range 2, 0-5.0 V
+     Conc Span, 1000 ug/m3
+   Conc Offset, 0 ug/m3
+Hourly Timestamp, BEGINNING
+  FT Set Point, 45.0
+     FT P-Gain, 0.500
+     FT I-Gain, 0.300
+RealTime Alpha, 0.2316
+RealTime Gamma, 0.1500
+   Beep Volume, 6
+ModBus Address, 1
+    Byte Order, 512
+  Factory Mode, OFF
+
+  Name, Offset,  Slope
+  FLOW,  0.057,  0.996
+    AT,  4.500
+    BP, -4.960
+    FT,  0.036
+ UPPER, -2.928
+ LOWER, -3.011
+   FRH,  0.000
+   BOX,  0.000
+ ENCL1,  0.000
+
+     DAC Cal 1, 0.0,0,5.0,52428
+     DAC Cal 2, 0.0,0,5.0,52428
+
+Factory Settings
+      Cal Span, 0.822

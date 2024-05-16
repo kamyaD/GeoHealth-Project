@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}  
+{% load widget_tweaks %}
+{% block title%}Register{%endblock%}
+{% block content %}
+<div class="p-8 flex flex-col items-center">
+    <!-- <h1 class="font-medium leading-tight text-4xl mt-0 mb-4 text-blue-600">Welcome</h1> -->
+    <p>
+    <!-- <a class="text-blue-600 tracking-normal mb-4" >Register</a> -->
+    </p>
+    {% if user.request.is_authenticated %}
+    <div class="w-full max-w-xs">
+        <img class="w-full" src="{% static 'img/Nairobi.jpeg'%}" alt="Sunset in the mountains">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <p>Are you sure you want to logout? </p>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Yes, logout.
+                </button>                
+                <!-- <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{% url 'password_reset' %}">
+                    Forgot Password?
+                </a> -->
+            </div>
+        </form>
+    </div>
+    {% else %}
+    <p>You are not logged in. Would you like to <a href="{% url 'login'%}"> Login</a>?</p>
+    {% endif %}
+    
+
+{% endblock %}

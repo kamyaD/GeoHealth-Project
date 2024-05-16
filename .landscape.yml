@@ -1,7 +1,0 @@
-strictness: medium
-pep8:
-    full: true
-uses:
-    - django
-ignore-paths:
-    - demo_and_tests/

@@ -1,0 +1,254 @@
+<!Doctype html>
+<html lang="en">
+    {% load static %}  
+    <header>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale==1.0">
+        <title>Data Management System</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        {% block head %}
+        {% endblock %}
+        <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}"  rel="stylesheet" type="text/css">
+        <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet"> 
+    </header>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+                    <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{%url 'about' %}">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <!-- <i class="fas fa-laugh-wink"></i> -->
+                </div>
+                <div class="sidebar-brand-text mx-3">GeoHealth Nairobi</div>
+
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{%url 'about' %}">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <span></span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                <!-- Interface -->
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+          
+            
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>About</span></a>
+            </li> -->
+        </ul>
+        <!-- End of Sidebar -->
+         <div class="container mt-4">
+            <ul class="nav nav-tabs">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'about' %}">About</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" aria-expanded="false">
+                        Raw Data
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" aria-expanded="false">
+                                Hospital Data
+                            </a>
+                            <ul class="dropdown-menu hospital-data" aria-labelledby="navbarDropdownSubmenu">
+                                <li><a class="dropdown-item" href="{% url 'list-agakhan-data' %}">Agakhan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-mamalucy-data' %}">Mama Lucy</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-mbagathi-data' %}">Mbagathi</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-metropolitan-data' %}">Metropolitan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-nairobi-data' %}">Nairobi</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-mata-data' %}">Mata</a></li>
+                            </ul>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-bam-data' %}">BAM Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-chs-data' %}">CHS Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-spirometry-data' %}">Spirometry Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-quanta-aq-data' %}">QuontAQ Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-air-qo-data' %}">AirQo Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{%url 'list-e-smarpler-data' %}">E-smapler Data</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" aria-expanded="false">
+                        Database
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" aria-expanded="false">
+                                Hospital Data
+                            </a>
+                            <ul class="dropdown-menu hospital-data" aria-labelledby="navbarDropdownSubmenu">
+                                <li><a class="dropdown-item" href="{% url 'list-database-agakhan-data' %}">Agakhan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-database-mamalucy-data' %}">Mama Lucy</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-database-mbagathi-data' %}">Mbagathi</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-database-metropolitan-data' %}">Metropolitan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-database-nairobi-data' %}">Nairobi</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'list-database-mata-data' %}">Mata</a></li>
+                            </ul>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-database-bam-data' %}">Bam Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-database-chs-data' %}">CHS Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-database-spirometry-data' %}">Spirometry Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-database-quontAQ-data' %}">QuontAQ Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-database-airQo-data' %}">AirQo Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{%url 'list-database-e-smapler-data' %}">E-smapler Data</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-expanded="false">
+                    Publications
+                    </a>
+                    <ul class="dropdown-menu hospital-data" aria-labelledby="navbarDropdownSubmenu">
+                        <li><a class="dropdown-item" href="{%url 'list-draft-papers-data' %}">Draft Papers</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{%url 'list-published-papers-data' %}">Published Papers</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{%url 'list-proposals-data' %}">Proposals</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-expanded="false">
+                        Reports
+                    </a>
+                    <ul class="dropdown-menu hospital-data" aria-labelledby="navbarDropdownSubmenu">
+                        <li><a class="dropdown-item" href="{%url 'list-analysis-reports-data' %}">Analysis Reports</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-anual-reports-data' %}">Anual Reports</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-cycle-reports-data' %}">Cycle Reports</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'list-every-week-reports-data' %}">Every Week Reports</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'list-datasharing-data' %}">Datasharing</a>
+                </li>
+                
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else%}
+                    <li class="nav-item">
+                    <a class="nav-link active" href="{%url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Planning Grant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Training</a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'login' %}">Login</a>
+                    </li>
+                  {% endif %}
+
+                
+              </ul>
+              
+            
+            {% block content %}
+            
+            {% endblock %}
+            <p class="text-center text-gray-500 text-xs">
+                &copy;2024 <a href="https://www.linkedin.com/in/kamya-domnick-5999b9193/">GTG</a>. All rights reserved.
+            </p>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+        <!-- Page level plugins -->
+        <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
+        <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get all dropdown toggles
+                const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                
+                // Loop through each dropdown toggle
+                dropdownToggles.forEach(function (dropdownToggle) {
+                    // Add click event listener to the dropdown toggle
+                    dropdownToggle.addEventListener('click', function (event) {
+                        // Prevent default link behavior
+                        event.preventDefault();
+        
+                        // Get the corresponding dropdown menu
+                        const dropdownMenu = dropdownToggle.nextElementSibling;
+                        
+                        // Toggle the 'show' class on the dropdown menu
+                        dropdownMenu.classList.toggle('show');
+                    });
+                });
+            });
+        </script>
+        
+    </body>
+</html>
